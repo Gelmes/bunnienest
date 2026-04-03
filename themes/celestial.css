@@ -1,0 +1,100 @@
+/* Theme: Celestial Goddess — midnight, gold, cosmic */
+:root {
+  --peach-50:  #141825;
+  --peach-100: #1a2035;
+  --peach-200: #2a3350;
+  --peach-300: #c9a84c;
+  --peach-400: #e0c068;
+  --peach-500: #d4a030;
+  --peach-600: #b8882a;
+  --pink-50:   #12162a;
+  --pink-100:  #1c2240;
+  --pink-200:  #2e3860;
+  --pink-300:  #7a6aaa;
+  --pink-400:  #a08cd0;
+  --brown-700: #e8dcc0;
+  --brown-800: #0c0f1a;
+  --cream:     #0e1220;
+  --white:     #181d30;
+  --text:      #f0e8d8;
+  --text-light:#a8a0b8;
+  --shadow:    rgba(8, 6, 16, 0.3);
+  --glow:      rgba(212, 160, 48, 0.4);
+}
+
+/* Dark theme overrides */
+body { color: var(--text); }
+
+.nav-pill {
+  background: rgba(24, 29, 48, 0.85);
+  border-color: var(--peach-200);
+}
+
+.nav-links a { color: var(--text-light); }
+.nav-links a:hover { color: var(--peach-400); background: rgba(212, 160, 48, 0.08); }
+
+.hero-badge {
+  background: var(--white);
+  border-color: var(--peach-300);
+  color: var(--peach-400);
+}
+
+.hero-bg {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(122, 106, 170, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(212, 160, 48, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(160, 140, 208, 0.08) 0%, transparent 40%),
+    var(--cream) !important;
+}
+
+.feature-card {
+  background: var(--white);
+  border-color: var(--peach-200);
+}
+
+.feature-card:hover {
+  border-color: var(--peach-400);
+  box-shadow: 0 12px 40px rgba(212, 160, 48, 0.1);
+}
+
+.feature-card h3 { color: var(--text); }
+
+.card-icon {
+  background: linear-gradient(135deg, var(--peach-200), rgba(212, 160, 48, 0.15));
+}
+
+.coming-soon-banner { background: var(--white); }
+.coming-soon-banner::before { background: linear-gradient(135deg, var(--peach-200) 0%, transparent 60%); }
+
+.contact-card { background: var(--white); }
+
+.pricing-card {
+  background: var(--white);
+  border-color: var(--peach-200);
+}
+
+.footer { background: #070a14; }
+.footer-logo { color: var(--peach-400); }
+.footer-social { color: var(--peach-400); }
+.footer-social:hover { color: var(--peach-300); }
+
+.nav-cta { background: var(--peach-500) !important; color: #0e1220 !important; }
+.nav-cta:hover { background: var(--peach-400) !important; }
+.btn { color: #0e1220; }
+.btn-outline { color: var(--peach-400); border-color: var(--peach-300); }
+.btn-outline:hover { color: #0e1220; }
+.nav-logo { color: var(--peach-400); }
+.nav-toggle span { background: var(--text-light); }
+
+.ping-ring { background: var(--peach-400); }
+.ping-core { background: var(--peach-400); }
+
+.price-tag { color: var(--peach-400); }
+.coming-soon-banner h3 { color: var(--peach-400); }
+
+@media (max-width: 768px) {
+  .nav-links {
+    background: rgba(24, 29, 48, 0.98);
+    border-color: var(--peach-200);
+  }
+}

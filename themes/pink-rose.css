@@ -1,0 +1,23 @@
+/* Theme: Pink Rose — soft rose, mauve, blush */
+:root {
+  --peach-50:  #fdf2f4;
+  --peach-100: #fce7eb;
+  --peach-200: #f9cdd6;
+  --peach-300: #f4a3b5;
+  --peach-400: #ed7a95;
+  --peach-500: #e05478;
+  --peach-600: #c93d62;
+  --pink-50:   #fef1f6;
+  --pink-100:  #fde4ef;
+  --pink-200:  #fbc8df;
+  --pink-300:  #f9a8cb;
+  --pink-400:  #f287b5;
+  --brown-700: #6b2140;
+  --brown-800: #521832;
+  --cream:     #fefafb;
+  --white:     #ffffff;
+  --text:      #4a1d33;
+  --text-light:#8a5068;
+  --shadow:    rgba(106, 33, 64, 0.08);
+  --glow:      rgba(224, 84, 120, 0.3);
+}

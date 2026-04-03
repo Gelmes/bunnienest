@@ -7,134 +7,182 @@
   <meta name="description" content="Bunnienest — Hand-raised Holland Lops in Hemet, CA. Your next cuddle buddy is waiting.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" id="theme-css" href="themes/mystical.css">
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Floating Navbar -->
   <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">🐰 Bunnienest</a>
+    <div class="nav-pill">
+      <a href="#hero" class="nav-logo">Bunnienest</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <!-- <li><a href="#about">Our Rabbitry</a></li> -->
-        <li><a href="#available">Available Bunnies</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#available">Bunnies</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero -->
   <header class="hero" id="hero">
-    <div class="hero-overlay"></div>
+    <div class="hero-bg"></div>
     <div class="hero-content">
-      <h1>Bunnienest</h1>
-      <p class="tagline">Your next cuddle buddy is waiting</p>
-      <a href="#available" class="btn">Meet Our Bunnies</a>
+      <div class="hero-badge">
+        <span class="ping-dot">
+          <span class="ping-ring"></span>
+          <span class="ping-core"></span>
+        </span>
+        <span>Hand-Raised Holland Lops</span>
+      </div>
+      <h1>
+        <span class="kinetic-text">YOUR NEXT</span>
+        <span class="kinetic-text accent">CUDDLE BUDDY</span>
+        <span class="kinetic-text">IS WAITING.</span>
+      </h1>
+      <p class="hero-sub kinetic-subtext">
+        A small-scale rabbitry in <strong>Hemet, California</strong> — raising social, confident, and irresistibly cuddly Holland Lops.
+      </p>
+      <div class="hero-cta vsl-reveal">
+        <a href="#available" class="btn btn-glow">
+          Meet Our Bunnies
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- Divider -->
-  <div class="divider">
-    <svg viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-  </div>
-
-  <!-- About -->
+  <!-- About Cards -->
   <section class="section about" id="about">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <img src="pictures/4 Bunnies.jpg" alt="Our rabbitry — a group of Holland Lop bunnies">
+      <div class="section-header">
+        <h2 class="section-title">Why Bunnienest?</h2>
+        <p class="section-sub">Every bunny we raise gets the full VIP treatment from day one.</p>
+      </div>
+      <div class="card-grid">
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Raised with Love</h3>
+          <p>Handled daily from birth so every baby grows up social, confident, and ready for snuggles from day one.</p>
         </div>
-        <div class="about-text">
-          <!-- <h2>Our Rabbitry</h2> -->
-          <p>Welcome to <strong>Bunnienest</strong> — a small-scale Holland Lop rabbitry nestled in <strong>Hemet, California</strong>. We pour love into every litter, handling our babies daily from birth so they grow up social, confident, and ready for their forever homes.</p>
-          <p>Each bunny is raised with individual attention, proper nutrition, and plenty of snuggle time. We believe that happy babies make happy pets, and we take pride in sending home bunnies that are healthy, well-socialized, and full of personality.</p>
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Health Guaranteed</h3>
+          <p>Every Holland Lop is health-checked and well-nourished before going to their forever home at 8 weeks old.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Big Personalities</h3>
+          <p>Individual attention means each bunny develops their own unique personality — playful, curious, and full of charm.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="divider">
-    <svg viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-  </div>
-
-  <!-- Available Bunnies -->
-  <section class="section available" id="available">
+  <!-- Gallery -->
+  <section class="section gallery-section" id="available">
     <div class="container">
-      <h2>Available Bunnies</h2>
-      <div class="coming-soon-banner">
-        <h3>New Babies Coming Soon!</h3>
-        <p>Follow us on Instagram to be the first to know when our next litter arrives.</p>
-        <a href="https://www.instagram.com/bunnienest" target="_blank" rel="noopener" class="btn btn-outline">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-          Follow @bunnienest
-        </a>
+      <div class="section-header">
+        <h2 class="section-title">Our Bunnies</h2>
+        <p class="section-sub">Take a peek at some of our adorable Holland Lops.</p>
       </div>
+
+      <div class="coming-soon-banner vsl-reveal">
+        <div class="banner-content">
+          <span class="ping-dot">
+            <span class="ping-ring"></span>
+            <span class="ping-core"></span>
+          </span>
+          <h3>New Babies Coming Soon!</h3>
+          <p>Follow us on Instagram to be the first to know when our next litter arrives.</p>
+          <a href="https://www.instagram.com/bunnienest" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            Follow @bunnienest
+          </a>
+        </div>
+      </div>
+
       <div class="bunny-gallery">
-        <div class="gallery-item"><img src="pictures/4 Bunnies.jpg" alt="Group of Holland Lop bunnies"></div>
-        <div class="gallery-item"><img src="pictures/4 Bunnes 2.jpg" alt="Group of Holland Lop bunnies"></div>
-        <div class="gallery-item"><img src="pictures/Bunnie 2.jpg" alt="Holland Lop bunny"></div>
-        <div class="gallery-item"><img src="pictures/Bunnie 3.jpg" alt="Holland Lop bunny"></div>
-        <div class="gallery-item"><img src="pictures/Bunnie 4.jpg" alt="Holland Lop bunny"></div>
-        <div class="gallery-item"><img src="pictures/Bunnie 1.jpg" alt="Holland Lop bunny"></div>
+        <div class="gallery-item feature-card"><img src="pictures/4 Bunnies.jpg" alt="Group of Holland Lop bunnies"></div>
+        <div class="gallery-item feature-card"><img src="pictures/4 Bunnes 2.jpg" alt="Group of Holland Lop bunnies"></div>
+        <div class="gallery-item feature-card"><img src="pictures/Bunnie 2.jpg" alt="Holland Lop bunny"></div>
+        <div class="gallery-item feature-card"><img src="pictures/Bunnie 3.jpg" alt="Holland Lop bunny"></div>
+        <div class="gallery-item feature-card"><img src="pictures/Bunnie 4.jpg" alt="Holland Lop bunny"></div>
+        <div class="gallery-item feature-card"><img src="pictures/Bunnie 1.jpg" alt="Holland Lop bunny"></div>
       </div>
     </div>
   </section>
-
-  <!-- Divider -->
-  <div class="divider">
-    <svg viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-  </div>
 
   <!-- Pricing -->
-  <section class="section pricing" id="pricing">
+  <section class="section pricing-section" id="pricing">
     <div class="container">
-      <div class="pricing-grid">
-        <div class="pricing-text">
-          <h2>Pricing</h2>
-          <div class="price-tag">$150 — $250</div>
-          <p>Our pricing reflects the exceptional time, care, and resources dedicated to raising each bunny. Every Holland Lop is hand-raised from birth, health-checked, and ready to join your family at <strong>8 weeks old</strong>.</p>
-          <p>Interested in a bunny? Send us a message on Instagram to chat about availability and reserve your new best friend.</p>
-          <a href="https://www.instagram.com/bunnienest" target="_blank" rel="noopener" class="btn">Message Us on Instagram</a>
-        </div>
+      <div class="pricing-card vsl-reveal">
         <div class="pricing-image">
           <img src="pictures/Bunnie 1.jpg" alt="Holland Lop bunny">
         </div>
+        <div class="pricing-text">
+          <h2>Bring One Home</h2>
+          <div class="price-tag">$150 — $250</div>
+          <p>Our pricing reflects the exceptional time, care, and resources dedicated to raising each bunny. Every Holland Lop is hand-raised from birth, health-checked, and ready to join your family at <strong>8 weeks old</strong>.</p>
+          <p>Interested? Send us a message on Instagram to chat about availability and reserve your new best friend.</p>
+          <a href="https://www.instagram.com/bunnienest" target="_blank" rel="noopener" class="btn btn-glow">
+            Message Us on Instagram
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="divider">
-    <svg viewBox="0 0 120 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 10 Q15 0 30 10 T60 10 T90 10 T120 10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-  </div>
-
-  <!-- Contact / CTA -->
-  <section class="section contact" id="contact">
-    <div class="container text-center">
-      <h2>Let's Connect</h2>
-      <p>Have questions or want to bring home a bunny? Reach out to us on Instagram — we'd love to hear from you!</p>
-      <div class="contact-card">
-        <div class="contact-info">
-          <p><strong>📍 Location:</strong> Hemet, CA — Local pickup only</p>
-          <p><strong>🐰 Breed:</strong> Holland Lops</p>
-          <p><strong>💰 Price Range:</strong> $150 – $250</p>
+  <!-- Contact -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-sub">Have questions or want to bring home a bunny? We'd love to hear from you!</p>
+      </div>
+      <div class="contact-card feature-card">
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="card-icon small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Location</strong>
+              <p>Hemet, CA — Local pickup only</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="card-icon small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <div>
+              <strong>Breed</strong>
+              <p>Holland Lops</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="card-icon small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <strong>Price Range</strong>
+              <p>$150 – $250</p>
+            </div>
+          </div>
         </div>
-        <a href="https://www.instagram.com/bunnienest" target="_blank" rel="noopener" class="btn btn-lg">
+        <a href="https://www.instagram.com/bunnienest" target="_blank" rel="noopener" class="btn btn-glow btn-lg">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
           @bunnienest on Instagram
         </a>
@@ -146,7 +194,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <p class="footer-logo">🐰 Bunnienest</p>
+        <p class="footer-logo">Bunnienest</p>
         <p class="footer-location">Hemet, CA</p>
         <a href="https://www.instagram.com/bunnienest" target="_blank" rel="noopener" class="footer-social">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -157,6 +205,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+/* Theme: Forest — sage, moss, earthy greens */
+:root {
+  --peach-50:  #f4f7f4;
+  --peach-100: #e8f0e6;
+  --peach-200: #cfe0cb;
+  --peach-300: #a8c9a0;
+  --peach-400: #7fb275;
+  --peach-500: #5a9a50;
+  --peach-600: #477e3e;
+  --pink-50:   #f2f6f0;
+  --pink-100:  #e5ede2;
+  --pink-200:  #c8dbc2;
+  --pink-300:  #a4c49c;
+  --pink-400:  #82ad78;
+  --brown-700: #2d3b28;
+  --brown-800: #1e2b1a;
+  --cream:     #f8faf6;
+  --white:     #ffffff;
+  --text:      #2a3326;
+  --text-light:#5a6b54;
+  --shadow:    rgba(30, 43, 26, 0.08);
+  --glow:      rgba(90, 154, 80, 0.3);
+}

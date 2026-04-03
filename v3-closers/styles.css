@@ -1,0 +1,22 @@
+/* Kinetic SaaS Variant Styles */
+
+html {
+    scroll-behavior: smooth;
+    background-color: #0F172A;
+}
+
+/* Floating animation for notification card */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Base interactive */
+a, button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,23 @@
+/* Theme: Professional Blue — slate, navy, clean */
+:root {
+  --peach-50:  #f0f4f8;
+  --peach-100: #e1e8f0;
+  --peach-200: #c3d1e0;
+  --peach-300: #96b3cc;
+  --peach-400: #6993b8;
+  --peach-500: #4578a4;
+  --peach-600: #35608a;
+  --pink-50:   #f0f3f7;
+  --pink-100:  #e0e7f0;
+  --pink-200:  #bfcfe0;
+  --pink-300:  #97b2cc;
+  --pink-400:  #7096b8;
+  --brown-700: #1e3248;
+  --brown-800: #152538;
+  --cream:     #f6f8fb;
+  --white:     #ffffff;
+  --text:      #1a2b3d;
+  --text-light:#546b82;
+  --shadow:    rgba(21, 37, 56, 0.08);
+  --glow:      rgba(69, 120, 164, 0.3);
+}

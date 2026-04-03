@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bunnienest — Theme Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 40px 24px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+    }
+    .themes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .theme-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid #333;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .theme-card:hover {
+      border-color: #666;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .theme-preview {
+      height: 320px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .theme-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .preview-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      position: relative;
+      z-index: 1;
+    }
+    .preview-hero {
+      position: relative;
+      z-index: 1;
+    }
+    .preview-hero h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .preview-hero p {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+    .preview-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .preview-cards {
+      display: flex;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .preview-mini-card {
+      flex: 1;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .theme-label {
+      padding: 20px 24px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .theme-name {
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .theme-desc {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .swatch-row {
+      display: flex;
+      gap: 4px;
+    }
+    .swatch {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #333;
+    }
+    .apply-btn {
+      background: #333;
+      border: none;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .apply-btn:hover {
+      background: #555;
+    }
+    .instructions {
+      text-align: center;
+      max-width: 600px;
+      margin: 48px auto 0;
+      padding: 24px;
+      background: #1a1a1a;
+      border-radius: 16px;
+      border: 1px solid #333;
+    }
+    .instructions h3 { margin-bottom: 12px; font-size: 1.1rem; }
+    .instructions code {
+      display: block;
+      background: #0d0d0d;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: left;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <h1>Theme Preview</h1>
+  <p class="subtitle">Pick a vibe for Bunnienest. Click any theme to preview it live.</p>
+
+  <div class="themes">
+
+    <!-- Pink Rose -->
+    <div class="theme-card" onclick="window.open('index.html?theme=pink-rose','_blank')">
+      <div class="theme-preview" style="background: linear-gradient(135deg, #fce7eb, #fbc8df, #fdf2f4);">
+        <div class="preview-nav" style="background: rgba(255,255,255,0.85); color: #c93d62;">
+          <span>Bunnienest</span>
+          <span style="background: #e05478; color: #fff; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem;">Contact</span>
+        </div>
+        <div class="preview-hero" style="color: #521832;">
+          <h2>YOUR NEXT<br><span style="color: #e05478;">CUDDLE BUDDY</span></h2>
+          <div class="preview-btn" style="background: #e05478; color: #fff;">Meet Our Bunnies</div>
+        </div>
+        <div class="preview-cards">
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #f9cdd6; color: #4a1d33;">Raised with Love</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #f9cdd6; color: #4a1d33;">Health First</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #f9cdd6; color: #4a1d33;">Big Personality</div>
+        </div>
+      </div>
+      <div class="theme-label">
+        <div>
+          <div class="theme-name">Pink Rose</div>
+          <div class="theme-desc">Soft rose, mauve & blush</div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #e05478;"></div>
+          <div class="swatch" style="background: #f9cdd6;"></div>
+          <div class="swatch" style="background: #521832;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Forest -->
+    <div class="theme-card" onclick="window.open('index.html?theme=forest','_blank')">
+      <div class="theme-preview" style="background: linear-gradient(135deg, #e8f0e6, #c8dbc2, #f4f7f4);">
+        <div class="preview-nav" style="background: rgba(255,255,255,0.85); color: #477e3e;">
+          <span>Bunnienest</span>
+          <span style="background: #5a9a50; color: #fff; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem;">Contact</span>
+        </div>
+        <div class="preview-hero" style="color: #1e2b1a;">
+          <h2>YOUR NEXT<br><span style="color: #5a9a50;">CUDDLE BUDDY</span></h2>
+          <div class="preview-btn" style="background: #5a9a50; color: #fff;">Meet Our Bunnies</div>
+        </div>
+        <div class="preview-cards">
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #cfe0cb; color: #2a3326;">Raised with Love</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #cfe0cb; color: #2a3326;">Health First</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #cfe0cb; color: #2a3326;">Big Personality</div>
+        </div>
+      </div>
+      <div class="theme-label">
+        <div>
+          <div class="theme-name">Forest</div>
+          <div class="theme-desc">Sage, moss & earthy greens</div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #5a9a50;"></div>
+          <div class="swatch" style="background: #cfe0cb;"></div>
+          <div class="swatch" style="background: #1e2b1a;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Blue -->
+    <div class="theme-card" onclick="window.open('index.html?theme=professional-blue','_blank')">
+      <div class="theme-preview" style="background: linear-gradient(135deg, #e1e8f0, #bfcfe0, #f0f4f8);">
+        <div class="preview-nav" style="background: rgba(255,255,255,0.85); color: #35608a;">
+          <span>Bunnienest</span>
+          <span style="background: #4578a4; color: #fff; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem;">Contact</span>
+        </div>
+        <div class="preview-hero" style="color: #152538;">
+          <h2>YOUR NEXT<br><span style="color: #4578a4;">CUDDLE BUDDY</span></h2>
+          <div class="preview-btn" style="background: #4578a4; color: #fff;">Meet Our Bunnies</div>
+        </div>
+        <div class="preview-cards">
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #c3d1e0; color: #1a2b3d;">Raised with Love</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #c3d1e0; color: #1a2b3d;">Health First</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #c3d1e0; color: #1a2b3d;">Big Personality</div>
+        </div>
+      </div>
+      <div class="theme-label">
+        <div>
+          <div class="theme-name">Professional Blue</div>
+          <div class="theme-desc">Slate, navy & clean</div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #4578a4;"></div>
+          <div class="swatch" style="background: #c3d1e0;"></div>
+          <div class="swatch" style="background: #152538;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mystical -->
+    <div class="theme-card" onclick="window.open('index.html?theme=mystical','_blank')">
+      <div class="theme-preview" style="background: linear-gradient(135deg, #231b30, #110d1a, #1c1428);">
+        <div class="preview-nav" style="background: rgba(30,23,48,0.85); color: #c084fc;">
+          <span>Bunnienest</span>
+          <span style="background: #a855f7; color: #fff; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem;">Contact</span>
+        </div>
+        <div class="preview-hero" style="color: #e8dff5;">
+          <h2>YOUR NEXT<br><span style="color: #a855f7;">CUDDLE BUDDY</span></h2>
+          <div class="preview-btn" style="background: #a855f7; color: #fff;">Meet Our Bunnies</div>
+        </div>
+        <div class="preview-cards">
+          <div class="preview-mini-card" style="background: #1e1730; border: 1px solid #3d2e54; color: #e8dff5;">Raised with Love</div>
+          <div class="preview-mini-card" style="background: #1e1730; border: 1px solid #3d2e54; color: #e8dff5;">Health First</div>
+          <div class="preview-mini-card" style="background: #1e1730; border: 1px solid #3d2e54; color: #e8dff5;">Big Personality</div>
+        </div>
+      </div>
+      <div class="theme-label">
+        <div>
+          <div class="theme-name">Mystical</div>
+          <div class="theme-desc">Deep purple, amethyst & moody</div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #a855f7;"></div>
+          <div class="swatch" style="background: #3d2e54;"></div>
+          <div class="swatch" style="background: #110d1a;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fairy -->
+    <div class="theme-card" onclick="window.open('index.html?theme=fairy','_blank')">
+      <div class="theme-preview" style="background: linear-gradient(135deg, #f0e8ff, #d9ccf5, #f8f4ff);">
+        <div class="preview-nav" style="background: rgba(255,255,255,0.85); color: #8355bb;">
+          <span>Bunnienest</span>
+          <span style="background: #9b6dd4; color: #fff; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem;">Contact</span>
+        </div>
+        <div class="preview-hero" style="color: #2c1d48;">
+          <h2>YOUR NEXT<br><span style="color: #9b6dd4;">CUDDLE BUDDY</span></h2>
+          <div class="preview-btn" style="background: #9b6dd4; color: #fff;">Meet Our Bunnies</div>
+        </div>
+        <div class="preview-cards">
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #dfd0f9; color: #33264a;">Raised with Love</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #dfd0f9; color: #33264a;">Health First</div>
+          <div class="preview-mini-card" style="background: #fff; border: 1px solid #dfd0f9; color: #33264a;">Big Personality</div>
+        </div>
+      </div>
+      <div class="theme-label">
+        <div>
+          <div class="theme-name">Fairy</div>
+          <div class="theme-desc">Lavender, lilac & enchanted pastels</div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #9b6dd4;"></div>
+          <div class="swatch" style="background: #dfd0f9;"></div>
+          <div class="swatch" style="background: #2c1d48;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Celestial -->
+    <div class="theme-card" onclick="window.open('index.html?theme=celestial','_blank')">
+      <div class="theme-preview" style="background: linear-gradient(135deg, #1a2035, #0e1220, #12162a);">
+        <div class="preview-nav" style="background: rgba(24,29,48,0.85); color: #e0c068;">
+          <span>Bunnienest</span>
+          <span style="background: #d4a030; color: #0e1220; padding: 6px 14px; border-radius: 100px; font-size: 0.75rem;">Contact</span>
+        </div>
+        <div class="preview-hero" style="color: #f0e8d8;">
+          <h2>YOUR NEXT<br><span style="color: #d4a030;">CUDDLE BUDDY</span></h2>
+          <div class="preview-btn" style="background: #d4a030; color: #0e1220;">Meet Our Bunnies</div>
+        </div>
+        <div class="preview-cards">
+          <div class="preview-mini-card" style="background: #181d30; border: 1px solid #2a3350; color: #f0e8d8;">Raised with Love</div>
+          <div class="preview-mini-card" style="background: #181d30; border: 1px solid #2a3350; color: #f0e8d8;">Health First</div>
+          <div class="preview-mini-card" style="background: #181d30; border: 1px solid #2a3350; color: #f0e8d8;">Big Personality</div>
+        </div>
+      </div>
+      <div class="theme-label">
+        <div>
+          <div class="theme-name">Celestial Goddess</div>
+          <div class="theme-desc">Midnight, gold & cosmic</div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #d4a030;"></div>
+          <div class="swatch" style="background: #7a6aaa;"></div>
+          <div class="swatch" style="background: #0e1220;"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="instructions">
+    <h3>How to apply a theme</h3>
+    <p style="color: #888; font-size: 0.9rem;">Click a card above to preview it live, or add the theme CSS after your base stylesheet:</p>
+    <code>&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;link rel="stylesheet" href="themes/forest.css"&gt;</code>
+  </div>
+</body>
+</html>

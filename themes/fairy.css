@@ -1,0 +1,23 @@
+/* Theme: Fairy — lavender, lilac, soft mint, enchanted pastels */
+:root {
+  --peach-50:  #f8f4ff;
+  --peach-100: #f0e8ff;
+  --peach-200: #dfd0f9;
+  --peach-300: #c9b0f0;
+  --peach-400: #b48de8;
+  --peach-500: #9b6dd4;
+  --peach-600: #8355bb;
+  --pink-50:   #f6f2ff;
+  --pink-100:  #ede6fc;
+  --pink-200:  #d9ccf5;
+  --pink-300:  #c0a8ed;
+  --pink-400:  #d4a5e8;
+  --brown-700: #3d2860;
+  --brown-800: #2c1d48;
+  --cream:     #faf8ff;
+  --white:     #ffffff;
+  --text:      #33264a;
+  --text-light:#6e5b8a;
+  --shadow:    rgba(44, 29, 72, 0.08);
+  --glow:      rgba(155, 109, 212, 0.3);
+}
