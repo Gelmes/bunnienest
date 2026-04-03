@@ -145,18 +145,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- Animated White Lop-Eared Bunny ---
+  // --- Animated White Lop-Eared Bunny ---
   const bunnyWrapper = document.createElement('div');
-  bunnyWrapper.style.cssText = 'position:fixed; bottom: 10px; left: -100px; width: 60px; height: 60px; z-index: 9998; pointer-events: none; transition: transform 0.6s linear; display: flex; justify-content: center; align-items: flex-end;';
+  bunnyWrapper.style.cssText = 'position:fixed; bottom: 10px; left: 0px; width: 60px; height: 60px; z-index: 9998; pointer-events: none; transition: transform 0.6s linear; display: flex; justify-content: center; align-items: flex-end;';
+  
+  const bunnyFlipper = document.createElement('div');
+  bunnyFlipper.style.cssText = 'width: 100%; height: 100%;';
   
   const bunnyInner = document.createElement('div');
   bunnyInner.innerHTML = `
     <svg viewBox="0 0 100 100" width="60" height="60" style="filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));">
+      <!-- Lop Ear 2 (back) -->
+      <path d="M 70,45 Q 85,75 70,85 Q 60,75 65,50 Z" fill="#fdf5ff" stroke="#ffe8ed" stroke-width="2"/>
       <!-- Body -->
       <path d="M 25,60 Q 25,35 50,35 Q 75,35 80,60 Q 80,85 50,85 Q 25,85 25,60 Z" fill="#ffffff"/>
       <!-- Head -->
       <circle cx="75" cy="50" r="20" fill="#ffffff"/>
-      <!-- Lop Ear 2 (back) -->
-      <path d="M 70,45 Q 85,75 70,85 Q 60,75 65,50 Z" fill="#fdf5ff" stroke="#ffe8ed" stroke-width="2"/>
       <!-- Lop Ear 1 (front) -->
       <path d="M 80,50 Q 95,80 80,90 Q 70,80 75,55 Z" fill="#ffffff" stroke="#ffe8ed" stroke-width="2"/>
       <!-- Eye -->
@@ -170,7 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <circle cx="70" cy="85" r="5" fill="#ffffff"/>
     </svg>
   `;
-  bunnyWrapper.appendChild(bunnyInner);
+  bunnyFlipper.appendChild(bunnyInner);
+  bunnyWrapper.appendChild(bunnyFlipper);
   document.body.appendChild(bunnyWrapper);
 
   let bX = Math.random() * window.innerWidth;
@@ -197,14 +202,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let didWrap = false;
     
-    // X Bounds
+    // X Bounds (bunny width is 60, so wait until ~60px offscreen)
     const screenW = window.innerWidth;
-    if (bX > screenW + 70) {
-      bX = -100;
+    if (bX > screenW + 80) {
+      bX = -80;
       bY = Math.random() * (window.innerHeight - 100);
       didWrap = true;
-    } else if (bX < -100) {
-      bX = screenW + 70;
+    } else if (bX < -80) {
+      bX = screenW + 80;
       bDirection = -1;
       bY = Math.random() * (window.innerHeight - 100);
       didWrap = true;
@@ -222,15 +227,18 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const scaleX = bDirection === 1 ? 1 : -1;
     
+    // Apply instant rotation to flipper
+    bunnyFlipper.style.transform = `scaleX(${scaleX})`;
+
     if (didWrap) {
       // Disable transition to teleport instantly
       bunnyWrapper.style.transition = 'none';
-      bunnyWrapper.style.transform = `translate(${bX}px, ${-bY}px) scaleX(${scaleX})`;
+      bunnyWrapper.style.transform = `translate(${bX}px, ${-bY}px)`;
       // Force repaint to register the snapshot
       bunnyWrapper.offsetHeight;
       bunnyWrapper.style.transition = 'transform 0.6s linear';
     } else {
-      bunnyWrapper.style.transform = `translate(${bX}px, ${-bY}px) scaleX(${scaleX})`;
+      bunnyWrapper.style.transform = `translate(${bX}px, ${-bY}px)`;
     }
     
     // Hop arch animation
@@ -252,8 +260,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function dropPoop() {
     const rect = bunnyWrapper.getBoundingClientRect();
-    const poopX = rect.left + (bDirection === 1 ? 20 : 40); // Centerish-back of the bunny
-    const poopY = rect.bottom + window.scrollY - 20; // Start higher up (center of rabbit)
+    // 25% into the illustration (15px from tail end)
+    const poopX = rect.left + (bDirection === 1 ? 15 : 45); 
+    const poopY = rect.bottom + window.scrollY - 20; 
     
     const poop = document.createElement('div');
     poop.style.cssText = `
@@ -269,6 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
       transform: translateY(0) scale(0.5);
       transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53), opacity 2s;
     `;
+    
     document.body.appendChild(poop);
     
     // Animate falling down and scaling to normal size
