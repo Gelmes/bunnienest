@@ -195,15 +195,19 @@ document.addEventListener("DOMContentLoaded", () => {
     bX += bDirection * hopDistanceX;
     bY += bYDirection * hopDistanceY;
     
+    let didWrap = false;
+    
     // X Bounds
     const screenW = window.innerWidth;
-    if (bX > screenW + 50) {
+    if (bX > screenW + 70) {
       bX = -100;
       bY = Math.random() * (window.innerHeight - 100);
+      didWrap = true;
     } else if (bX < -100) {
-      bX = screenW + 50;
+      bX = screenW + 70;
       bDirection = -1;
       bY = Math.random() * (window.innerHeight - 100);
+      didWrap = true;
     }
     
     // Y Bounds
@@ -217,8 +221,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     const scaleX = bDirection === 1 ? 1 : -1;
-    bunnyWrapper.style.transform = `translate(${bX}px, ${-bY}px) scaleX(${scaleX})`;
     
+    if (didWrap) {
+      // Disable transition to teleport instantly
+      bunnyWrapper.style.transition = 'none';
+      bunnyWrapper.style.transform = `translate(${bX}px, ${-bY}px) scaleX(${scaleX})`;
+      // Force repaint to register the snapshot
+      bunnyWrapper.offsetHeight;
+      bunnyWrapper.style.transition = 'transform 0.6s linear';
+    } else {
+      bunnyWrapper.style.transform = `translate(${bX}px, ${-bY}px) scaleX(${scaleX})`;
+    }
+    
+    // Hop arch animation
     bunnyInner.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     bunnyInner.style.transform = 'translateY(-25px)';
     
@@ -226,18 +241,19 @@ document.addEventListener("DOMContentLoaded", () => {
       bunnyInner.style.transition = 'transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53)';
       bunnyInner.style.transform = 'translateY(0)';
       
-      if (Math.random() < 0.25) {
+      // poop! 25% chance
+      if (!didWrap && Math.random() < 0.25) {
         dropPoop();
       }
     }, 300);
     
-    setTimeout(doHop, 600 + Math.random() * 800);
+    setTimeout(doHop, didWrap ? 50 : 600 + Math.random() * 800);
   }
   
   function dropPoop() {
     const rect = bunnyWrapper.getBoundingClientRect();
-    const poopX = rect.left + (bDirection === 1 ? 10 : 50);
-    const poopY = rect.bottom + window.scrollY - 6;
+    const poopX = rect.left + (bDirection === 1 ? 20 : 40); // Centerish-back of the bunny
+    const poopY = rect.bottom + window.scrollY - 20; // Start higher up (center of rabbit)
     
     const poop = document.createElement('div');
     poop.style.cssText = `
@@ -250,16 +266,26 @@ document.addEventListener("DOMContentLoaded", () => {
       border-radius: 4px;
       z-index: 9997;
       pointer-events: none;
+      transform: translateY(0) scale(0.5);
+      transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53), opacity 2s;
     `;
     document.body.appendChild(poop);
     
+    // Animate falling down and scaling to normal size
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        poop.style.transform = 'translateY(15px) scale(1)';
+      });
+    });
+    
+    // Fade out eventually
     setTimeout(() => {
-      poop.style.transition = 'opacity 2s';
       poop.style.opacity = '0';
       setTimeout(() => poop.remove(), 2000);
     }, 12000);
   }
 
+  // start
   setTimeout(doHop, 1000);
 
 });
