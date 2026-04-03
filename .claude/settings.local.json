@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:honeybunnyhollandlops.com)",
+      "Bash(git add:*)"
+    ]
+  }
+}
